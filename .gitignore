@@ -1,0 +1,9 @@
+# Folder with RPG Maker core files for reference
+core_files
+
+# Node Modules 
+node_modules
+
+# Personal scripts/modules
+package.json
+package-lock.json
