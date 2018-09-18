@@ -139,6 +139,8 @@ Window_Status.prototype.drawActorNickname = function (actor, x, y, width=270) {
 
 {{Old MV: Remove the `=270` from the function arguments and add this line as the first line of the function: `width = width || 270`}}
 
+![Harold Status Screen](./HaroldStatusScreen.png "Harold's Status Screen")
+
 > Why include an "if" statement? What is it doing?
 
 Remember before, how if there was no "race" notetag on the actor, we saved the "race" value as `null`?\
