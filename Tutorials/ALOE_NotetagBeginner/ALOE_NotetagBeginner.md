@@ -203,7 +203,7 @@ So we decide that we will structure our command as:
 
 The arguments are given to us in an `array` format, which is like a list. Arrays are zero-indexed, which means the first item is considered to be a position 0.
 
-We can now modify 
+We can now modify the function to use our logic.
 
 ```javascript
 Game_Interpreter.prototype.pluginCommand = function (command, args) {
