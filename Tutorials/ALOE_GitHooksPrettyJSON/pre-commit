@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+const files = ['data/System.json']   // add all JSON files here to pretty
+const fs = require('fs')
+const { exec } = require('child_process')
+try {
+    files.forEach(file => {
+        // Load file, pretty the JSON, and write it back
+        const json = fs.readFileSync(`./${file}`)
+        fs.writeFileSync(`./${file}`, JSON.stringify(JSON.parse(json), null, 2))
+        // Add the file back to the staging since it changed
+        exec(`git add ${file}`, (err, stdout, stderr) => {
+            if (err) {
+                console.error(err)
+                process.exit(1)
+            }
+
+            console.log(`stdout: ${stdout}`)
+            console.log(`stderr: ${stderr}`)
+            process.exit(0)
+        })
+    })
+
+} catch (err) {
+    console.error(err)
+    process.exit(1)
+}
